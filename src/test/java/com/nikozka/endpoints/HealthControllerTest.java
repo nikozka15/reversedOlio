@@ -24,7 +24,7 @@ class HealthControllerTest {
 
         // Verify the response
         resultActions.andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.content().string("OK. Date: " + LocalDate.now()));
+                .andExpect(MockMvcResultMatchers.content().string("OK.Date: " + LocalDate.now()));
     }
 
 }
