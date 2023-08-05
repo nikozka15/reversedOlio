@@ -22,4 +22,4 @@ jobs:
         distribution: 'adopt'
         cache: gradle
     - name: Build with gradle
-      run: gradlew build
+      run: gradle build
