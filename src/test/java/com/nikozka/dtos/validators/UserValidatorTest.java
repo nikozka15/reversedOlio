@@ -40,7 +40,6 @@ class UserValidatorTest {
         );
     }
 
-
     private static User createUserWithInvalidEmail() {
         return new User("gmailgmail.com", DEFAULT_PASSWORD, DEFAULT_CONFIRM_PASSWORD,
                 DEFAULT_FIRST_NAME, DEFAULT_LAST_NAME, DEFAULT_IS_TC_SIGNED);
