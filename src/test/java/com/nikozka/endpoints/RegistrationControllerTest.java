@@ -19,22 +19,17 @@ class RegistrationControllerTest {
 
     @Test
     public void testPostRegisterWithoutBody() throws Exception {
-        // Perform GET request to "/health" endpoint
         ResultActions resultActions = mockMvc.perform(post("/register"));
 
-        // Verify the response
         resultActions.andExpect(status().isBadRequest());
     }
 
     @Test
     public void testPostRegisterWithBody() throws Exception {
-
-
         ResultActions resultActions = mockMvc.perform(post("/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(createUser("gmail@gmail.com", true)));
 
-        // Verify the response
         resultActions.andExpect(status().isAccepted())
                 .andExpect(MockMvcResultMatchers.content().string(createResponse()));
     }
@@ -45,7 +40,6 @@ class RegistrationControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(createUser("gmailgmail.com", false)));
 
-        // Verify the response
         resultActions.andExpect(status().isBadRequest())
                 .andExpect(MockMvcResultMatchers.content().string(createErrorResponse()));
     }

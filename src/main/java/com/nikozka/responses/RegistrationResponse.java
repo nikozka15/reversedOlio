@@ -1,4 +1,4 @@
 package com.nikozka.responses;
 
-public record RegistrationResponse(Boolean registered) {
-}
+public record RegistrationResponse(Boolean registered) { }
+

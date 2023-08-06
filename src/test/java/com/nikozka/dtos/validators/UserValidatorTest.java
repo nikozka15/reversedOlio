@@ -28,6 +28,7 @@ class UserValidatorTest {
                 assertThrows(ValidationException.class, () -> UserValidator.validate(user));
         assertEquals(expected, validationException.getMessage());
     }
+
     static List<Object[]> data() {
         return Arrays.asList(
                 new Object[]{createUserWithInvalidEmail(), "Invalid email"},
@@ -49,6 +50,7 @@ class UserValidatorTest {
         return new User(DEFAULT_EMAIL, "123", "123",
                 DEFAULT_FIRST_NAME, DEFAULT_LAST_NAME, DEFAULT_IS_TC_SIGNED);
     }
+
     private static User createUserWithInvalidFirstName() {
         return new User(DEFAULT_EMAIL, DEFAULT_PASSWORD, DEFAULT_CONFIRM_PASSWORD,
                 "N", DEFAULT_LAST_NAME, DEFAULT_IS_TC_SIGNED);
