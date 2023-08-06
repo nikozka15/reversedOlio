@@ -2,6 +2,8 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.1.2'
 	id 'io.spring.dependency-management' version '1.1.2'
+	// id 'com.google.google-java-format' version '0.10.0'
+	id 'com.diffplug.spotless' version '6.20.0'
 }
 
 group = 'com.example'
@@ -17,9 +19,21 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.google.googlejavaformat:google-java-format:1.17.0'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+spotless {
+	java {
+		importOrder()
+		removeUnusedImports()
+		cleanthat()
+		googleJavaFormat()
+		formatAnnotations()
+	}
 }
