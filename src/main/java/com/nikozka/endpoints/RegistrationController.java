@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RegistrationController {
 
-    @PostMapping("/register")
-    public ResponseEntity<RegistrationResponse> register(@RequestBody @Validated User user) {
-        UserValidator.validate(user);
-        return ResponseEntity.accepted().body(new RegistrationResponse(true));
-    }
+  @PostMapping("/register")
+  public ResponseEntity<RegistrationResponse> register(@RequestBody @Validated User user) {
+    UserValidator.validate(user);
+    return ResponseEntity.accepted().body(new RegistrationResponse(true));
+  }
 }
