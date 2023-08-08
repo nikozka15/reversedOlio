@@ -8,7 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
   public static void main(String[] args) {
-    Flyway flyway = Flyway.configure()
+    Flyway flyway =
+        Flyway.configure()
             .dataSource("jdbc:postgresql://localhost:5432/reversed_olio", "postgres", "password")
             .locations("classpath:db.migration")
             .load();
