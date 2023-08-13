@@ -25,7 +25,6 @@ public class RegistrationService {
   }
 
   public com.nikozka.dao.entities.User convert(User userDto) {
-
     return new com.nikozka.dao.entities.User(
         UUID.randomUUID(),
         userDto.email(),
