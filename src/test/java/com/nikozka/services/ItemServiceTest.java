@@ -12,9 +12,9 @@ import com.nikozka.dao.ItemRepository;
 import com.nikozka.dtos.Item;
 import org.junit.jupiter.api.Test;
 
-class ItemRegistrationServiceTest {
+class ItemServiceTest {
   ItemRepository itemRepository = mock(ItemRepository.class);
-  ItemRegistrationService testObject = new ItemRegistrationService(itemRepository);
+  ItemService testObject = new ItemService(itemRepository);
 
   @Test
   public void testSuccessItemRegister() {
